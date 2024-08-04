@@ -54,20 +54,20 @@ func TestGetAPIKey(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			got, err := GetAPIKey(tc.headers)
 			if err != nil {
-                if tc.fails {
-                    return
-                }
+				if tc.fails {
+					return
+				}
 				t.Fatalf(err.Error())
-            }
+			}
 			if ok := reflect.DeepEqual(got, tc.want); !ok {
-                if tc.fails {
-                    return
-                }
+				if tc.fails {
+					return
+				}
 				t.Fatalf("%s: got: %s; want: %s;", name, got, tc.want)
 			}
-            if tc.fails {
-                t.Fatalf("%s: Expected fail, but passed.", name)
-            }
+			if tc.fails {
+				t.Fatalf("%s: Expected fail, but passed.", name)
+			}
 		})
 	}
 }
