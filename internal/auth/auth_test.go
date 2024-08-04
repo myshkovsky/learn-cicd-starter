@@ -13,7 +13,7 @@ func TestGetAPIKey(t *testing.T) {
 		want    string
 	}{
 		"Valid ApiKey": {
-			fails: false,
+			fails: true,
 			headers: func() http.Header {
 				header := http.Header{}
 				header.Set("Authorization", "ApiKey 1234567890")
