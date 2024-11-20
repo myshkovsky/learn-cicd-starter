@@ -57,7 +57,7 @@ func TestGetAPIKey(t *testing.T) {
 				if tc.fails {
 					return
 				}
-				t.Fatalf(err.Error())
+				t.Fatal(err.Error())
 			}
 			if ok := reflect.DeepEqual(got, tc.want); !ok {
 				if tc.fails {
