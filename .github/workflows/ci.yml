@@ -45,7 +45,7 @@ jobs:
         run: go install honnef.co/go/tools/cmd/staticcheck@latest
 
       - name: Check formatting issues
-        run: test -z $(go fmt ./...)
+        run: test -z "$(go fmt ./...)"
 
       - name: Check linting issues
-        run: test -z $(staticcheck ./...)
+        run: test -z "$(staticcheck ./...)"
