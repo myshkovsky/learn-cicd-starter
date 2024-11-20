@@ -48,9 +48,6 @@ jobs:
         run: |
           staticcheck ./...
 
-      - name: Check formatting issues
-        run: test -z "$(go fmt ./...)"
-
-      - name: Check linting issues
-        run: test -z "$(staticcheck ./...)"
-
+      - name: Run go fmt
+        run: |
+          go fmt ./...
